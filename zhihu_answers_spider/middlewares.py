@@ -8,7 +8,8 @@
 from scrapy import signals
 import random
 
-from scrapy.conf import settings
+from scrapy.utils.project import get_project_settings
+settings = get_project_settings()
 
 class RandomUserAgent(object):
     def process_request(self, request, spider):
