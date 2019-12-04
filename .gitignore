@@ -1,5 +1,7 @@
 # pycharm
-*.idea
+.idea/
 
+# vscode
+.vscode/
 # 下载文件
 download/
