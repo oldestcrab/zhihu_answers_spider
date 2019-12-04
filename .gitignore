@@ -1,0 +1,5 @@
+# pycharm
+*.idea
+
+# 下载文件
+download/
