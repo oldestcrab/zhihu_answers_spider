@@ -64,10 +64,12 @@ class ZhihuAnswersSpider(scrapy.Spider):
                 item['img_urls'] = img_pattern.findall(item['answer_content'])
                 item['img_urls'] = list(set(item['img_urls']))
                 # print(item)
+                # 只爬取大于1000点赞数的
+                if item['answer_voteup_count']:
+                    if int(item['answer_voteup_count']) > 1000:
+                       yield item
 
-                yield item
-
-        if self.offset < 10000:
+        if self.offset < 1000:
             next_url = self.start_urls[0] + f'&offset={self.offset*5}'
             # print(next_url)
             self.offset += 1
